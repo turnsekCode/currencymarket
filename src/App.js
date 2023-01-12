@@ -1,22 +1,33 @@
 import "./App.css";
+import Conversor from "./componentes/conversor/Conversor";
+import Contenedor from "./componentes/contenedor/Contenedor";
+import ConversorGoogle from "./componentes/conversor_google/ConversorGoogle";
+import TituloIzq from "./componentes/titulo_izq/TituloIzq";
+import Mapa from "./componentes/mapa/Mapa";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <div className="logo">
-            <img src="/logo_currencymarket.png" alt="logo" />
+    <Contenedor>
+      <div className="App">
+        <section className="contenedor_conversor">
+          <div className="bloque_izq">
+            <TituloIzq />
+            <Conversor />
           </div>
-          <h1>Web en construcción</h1>
-          <h2>Disculpen las molestias</h2>
-          <h3>
-            Pueden comunicarse con nosotros llamando al{" "}
-            <strong>637 22 75 41</strong>
-          </h3>
+          <div className="bloque_der">
+            <img
+              src="../chico-bandera-transparente-billetes-dollar 1.png"
+              alt=""
+            />
+          </div>
+        </section>
+        <div className="separador_section">
+          <img src="../Rectangle 34.png" alt="" />
         </div>
-      </header>
-    </div>
+        <ConversorGoogle />
+        <Mapa />
+      </div>
+    </Contenedor>
   );
 }
 
