@@ -1,18 +1,20 @@
 import React from "react";
 import "./banderasSuperior.css";
+import BanderaSuperiorIzq from "../../assets/esquina-sup-izquierda.png";
+import BanderaSuperiorDer from "../../assets/esquina-sup-derecha.png";
 
 const BanderasSuperior = () => {
   return (
     <div className="contenedor_banderas">
       <img
         className="imagen_bandera_izq"
-        src="../esquina-sup-izquierda.png"
-        alt=""
+        src={BanderaSuperiorIzq}
+        alt="banderas"
       />
       <img
         className="imagen_bandera_der"
-        src="../esquina-sup-derecha.png"
-        alt=""
+        src={BanderaSuperiorDer}
+        alt="banderas"
       />
     </div>
   );

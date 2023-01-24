@@ -69,12 +69,11 @@ const Conversor = () => {
             id="input-izquierdo"
             ref={refInput1}
             type="text"
-            className="input_dolar"
+            className=""
             pattern="[0-9]*"
-            placeholder="0.00"
+            placeholder="Cantidad"
             inputMode="numeric"
             onChange={calcularCambio}
-            readOnly
           />
           $<p className="info_precio">1$ = {replace / 1} €</p>
         </div>

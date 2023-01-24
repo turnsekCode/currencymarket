@@ -4,6 +4,8 @@ import Contenedor from "./componentes/contenedor/Contenedor";
 import ConversorGoogle from "./componentes/conversor_google/ConversorGoogle";
 import TituloIzq from "./componentes/titulo_izq/TituloIzq";
 import Mapa from "./componentes/mapa/Mapa";
+import ImagenChicoBandera from "../src/assets/chico-bandera-transparente-billetes-dollar 1.png";
+import Rectalgle34 from "../src/assets/Rectangle 34.png";
 
 function App() {
   return (
@@ -15,14 +17,11 @@ function App() {
             <Conversor />
           </div>
           <div className="bloque_der">
-            <img
-              src="../chico-bandera-transparente-billetes-dollar 1.png"
-              alt=""
-            />
+            <img src={ImagenChicoBandera} alt="" />
           </div>
         </section>
         <div className="separador_section">
-          <img src="../Rectangle 34.png" alt="" />
+          <img src={Rectalgle34} alt="" />
         </div>
         <ConversorGoogle />
         <Mapa />

@@ -6,14 +6,16 @@ const Header = () => {
   return (
     <div className="contenedor_header">
       <div className="contenedor_padding">
-        <h1 className="logo">
-          <span>CURRENCY</span>MARKET
-        </h1>
+        <a href="/" className="logo">
+          <span>CURRENCY</span>MARKET®
+        </a>
         <div className="contenedor_llamar">
-          <LocalPhoneIcon />
-          <h3>
-            LLAMAR <span>A CURRENCY MARKET</span>
-          </h3>
+          <a href="tel:900373629">
+            <LocalPhoneIcon />
+            <h3>
+              LLAMAR <span>A CURRENCY MARKET</span>
+            </h3>
+          </a>
         </div>
       </div>
     </div>

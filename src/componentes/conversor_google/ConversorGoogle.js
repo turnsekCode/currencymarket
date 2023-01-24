@@ -1,5 +1,7 @@
 import React from "react";
 import "./conversor_google.css";
+import LogoGoogle from "../../assets/logo-Google 1.png";
+import MapaUsa from "../../assets/mapa_usa.png";
 
 const ConversorGoogle = () => {
   return (
@@ -10,7 +12,7 @@ const ConversorGoogle = () => {
       <div className="contenedor_precio_google">
         <div className="contenedor_google">
           <iframe
-            src="https://www.google.com/search?q=dolar+cotizacion&igu=1&source=hp&ei=0thjY9nGHtKKur4Pz4ieuAk&iflsig=AJiK0e8AAAAAY2Pm4mguI7sumXHK4Mj2KMRumz8q6yBD&ved=0ahUKEwjZ98fZpJL7AhVShc4BHU-EB5cQ4dUDCAo&uact=5&oq=dolar+cotizacion&gs_lp=Egdnd3Mtd2l6uAED-AEBMg8QABixAxiDARhDGEYYggIyBBAAGEMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABMICBBAjGCfCAgsQABiABBixAxiDAcICCRAAGEMYRhiCAsICChAAGLEDGIMBGEPCAgcQABixAxhDwgIIEAAYsQMYgwHCAggQABiABBixA8ICCBAAGIAEGMsBSMkoUABYjCNwAHgAyAEAkAEAmAF5oAG3DaoBBDMuMTM&sclient=gws-wiz"
+            src="https://www.google.com/search?q=euro+cotizacion&igu=1&ei=igfJY8XFFJaW9u8Pweik4AM&ved=0ahUKEwjFsrq6o9P8AhUWi_0HHUE0CTwQ4dUDCA8&uact=5&oq=euro+cotizacion&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIPCAAQsQMQgwEQQxBGEIICMgcIABCABBANMgcIABCABBANMgQIABBDMgYIABAHEB4yBwgAEIAEEA0yBggAEAcQHjIHCAAQgAQQDTIHCAAQgAQQDTIHCAAQgAQQDUoECEEYAEoECEYYAFAAWJAGYPcRaABwAXgAgAFsiAGoA5IBAzAuNJgBAKABAcABAQ&sclient=gws-wiz-serp"
             name="myIFrame"
             frameBorder="0"
             scrolling="no"
@@ -19,16 +21,12 @@ const ConversorGoogle = () => {
           ></iframe>
         </div>
         <div className="contenedor_mapa_usa">
-          <img src="../../../mapa_usa.png" alt="mapa usa" />
+          <img src={MapaUsa} alt="mapa usa" />
         </div>
       </div>
       <div className="contenedor_texto_inferior">
         <span>Conversor de</span>
-        <img
-          className="logo_google"
-          src="../../../logo-Google 1.png"
-          alt="logo google"
-        />
+        <img className="logo_google" src={LogoGoogle} alt="logo google" />
       </div>
     </section>
   );
