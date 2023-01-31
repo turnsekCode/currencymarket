@@ -22,7 +22,12 @@ const SeccionFooter = () => {
           CONÓCENOS
         </a>
       </div>
-      <img className="barra_inferior" src={Rectangle46} alt="barra" />
+      <img
+        loading="lazy"
+        className="barra_inferior"
+        src={Rectangle46}
+        alt="barra"
+      />
       <p className="parrafo_footer">
         © 2023 Currencymarket | CURRENCY MARKET S.A. - A98914633 - RONDA AUGUSTE
         Y LOUIS LUMIERE, 23, NAVE 9 46980 PATERNA, VALENCIA -

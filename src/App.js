@@ -12,17 +12,17 @@ function App() {
     <Contenedor>
       <div className="App">
         <section className="contenedor_conversor">
-          <div className="bloque_izq">
+          {/* <div className="bloque_izq">
             <TituloIzq />
             <Conversor />
-          </div>
+  </div>
           <div className="bloque_der">
             <img src={ImagenChicoBandera} alt="" />
-          </div>
+          </div>*/}
         </section>
-        <div className="separador_section">
+        {/* <div className="separador_section">
           <img src={Rectalgle34} alt="" />
-        </div>
+        </div>*/}
         <ConversorGoogle />
         <Mapa />
       </div>

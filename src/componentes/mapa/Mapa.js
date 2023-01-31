@@ -92,7 +92,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a
@@ -150,7 +150,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a
@@ -208,7 +208,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a
@@ -266,7 +266,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a
@@ -324,7 +324,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a
@@ -382,7 +382,7 @@ const Mapa = () => {
                   target="_blank"
                   className="boton_como_llegar"
                 >
-                  Como llegar
+                  Cómo llegar
                 </a>
                 <br></br>
                 <a

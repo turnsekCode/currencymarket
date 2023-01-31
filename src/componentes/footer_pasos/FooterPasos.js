@@ -28,7 +28,12 @@ const FooterPasos = () => {
       <h2 className="titulo_inferior_footer">
         DE FORMA <span>RÁPIDA Y SEGURA</span>
       </h2>
-      <img className="barra_inferior" src={Rectangle46} alt="barra" />
+      <img
+        loading="lazy"
+        className="barra_inferior"
+        src={Rectangle46}
+        alt="barra"
+      />
     </section>
   );
 };

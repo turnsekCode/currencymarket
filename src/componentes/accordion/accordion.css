@@ -39,7 +39,7 @@
 .nombre_tienda{
     margin: 0 0 14px 0px;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     color: #003071;
@@ -176,7 +176,7 @@
         .nombre_tienda {
             margin: 0 0 14px 0px;
             font-style: normal;
-            font-weight: 900;
+            font-weight: 600;
             font-size: 22px;
             line-height: 22px;
             color: #003071;

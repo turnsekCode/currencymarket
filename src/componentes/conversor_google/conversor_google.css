@@ -40,7 +40,7 @@
     color: #003071;
 }
 .titulo_precio{
-    margin: 70px 0 30px 0px;
+    margin: 0px 0 30px 0px;
     font-style: normal;
     font-weight: 900;
     font-size: 30px;
@@ -49,6 +49,13 @@
 }
 .titulo_precio span{
     color: #B32234;
+}
+.contenedor_parrafo p{
+    color: #003071;
+    font-size: 25px;
+}
+.contenedor_parrafo {
+    text-align: center;
 }
 
 @media (min-width: 1191px) {
@@ -103,7 +110,7 @@
         }
     
         .titulo_precio {
-            margin: 47px 0 30px 0px;
+            margin: 0px 0 30px 0px;
             font-style: normal;
             font-weight: 900;
             font-size: 30px;

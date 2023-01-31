@@ -30,18 +30,21 @@
   text-align: justify;
 }
 .scroll-to-top{
-  bottom: 80px!important;
-  right: 10px!important;
-  color: #003071;
+    bottom: 147px !important;
+    right: 18px !important;
+}
+.scroll-to-top svg{
+    margin-left: -4px;
 }
 .mapboxgl-ctrl-group button{
   width: 29px;
   height: 29px;
 }
+
 @media (min-width: 375px) {
   .scroll-to-top {
-      bottom: 80px!important;
-      right: 10px!important;
+      bottom: 90px !important;
+      right: 18px !important;
     }
   .bloque_der {
     width: 334px;
@@ -79,7 +82,10 @@
     margin: 0 auto;
   }
   .scroll-to-top {
-    bottom: 40px !important;
-    right: 40px !important;
+    bottom: 87px !important;
+    right: 21px !important;
+  }
+  .scroll-to-top svg {
+    margin-left: 0px;
   }
 }

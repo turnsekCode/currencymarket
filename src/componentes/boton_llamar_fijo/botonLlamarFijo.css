@@ -1,13 +1,16 @@
 .contenedor_llamar_fijo{
-    height: 74px;
+    height: 60px;
     position: fixed;
-    bottom: 0;
+    bottom: 15px;
+    left: 7px;
     background: #003071;
-    width: 100%;
+    width: 68%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 900;
+    padding: 0px 20px;
+    border-radius: 5pc;
     box-shadow: 0px 6px 8px 10px rgba(0, 0, 0, 0.2);
 }
 .contenedor_llamar_fijo a {
@@ -15,7 +18,7 @@
     align-items: center;
     border: 2px solid #fff;
     border-radius: 8px;
-    padding: 10px 18px;
+    padding: 10px 5px;
     gap: 10px;
     text-decoration: none;
     width: 290px;
@@ -27,8 +30,8 @@
 
 .contenedor_llamar_fijo h3 {
     margin: 0;
-    font-weight: 900;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 13px;
     line-height: 20px;
     color: #fff;
 }

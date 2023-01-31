@@ -6,9 +6,9 @@ import MapaUsa from "../../assets/mapa_usa.png";
 const ConversorGoogle = () => {
   return (
     <section>
-      <h2 className="titulo_precio">
+      <h1 className="titulo_precio">
         Te damos los <span>dólares </span>al precio que marque Google
-      </h2>
+      </h1>
       <div className="contenedor_precio_google">
         <div className="contenedor_google">
           <iframe
@@ -27,6 +27,13 @@ const ConversorGoogle = () => {
       <div className="contenedor_texto_inferior">
         <span>Conversor de</span>
         <img className="logo_google" src={LogoGoogle} alt="logo google" />
+      </div>
+      <div className="contenedor_parrafo">
+        <p>
+          <strong>¿Dónde está el truco?</strong> No hay truco. Simplemente nos
+          sobran dólares y preferimos dártelos a ti en lugar de llevarlos al
+          banco
+        </p>
       </div>
     </section>
   );
