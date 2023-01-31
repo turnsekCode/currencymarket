@@ -67,6 +67,10 @@
     color: #fff;
     margin: 0;
 }
+.caja_pasos p{
+    margin: 0;
+    color: #fff;
+}
 .barra_inferior{
     width: 100%;
 }

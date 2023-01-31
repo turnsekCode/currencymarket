@@ -7,7 +7,7 @@ const ConversorGoogle = () => {
   return (
     <section>
       <h2 className="titulo_precio">
-        Utilizamos <span>el precio de </span>Google
+        Te damos los <span>dólares </span>al precio que marque Google
       </h2>
       <div className="contenedor_precio_google">
         <div className="contenedor_google">

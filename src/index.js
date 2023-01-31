@@ -7,11 +7,11 @@ import Privacidad from "./privacidad/Privacidad";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/dolares-cotizacion",
     element: <App />,
   },
   {
-    path: "/privacidad",
+    path: "/dolares-cotizacion/privacidad",
     element: <Privacidad />,
   },
 ]);

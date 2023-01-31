@@ -15,8 +15,8 @@ import Map, {
   NavigationControl,
   Popup,
 } from "react-map-gl";
-//import Accordion from "../accordion/Accordion";
 import Accordion2 from "../accordion/Accordion2";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Mapa = () => {
   const { delicias } = useFetchDelicias();
@@ -26,25 +26,31 @@ const Mapa = () => {
   const { caminos } = useFetchCaminos();
   const { alcala } = useFetchAlcala();
 
-  const [showPopup, setShowPopup] = useState("");
+  const [showPopup, setShowPopup] = useState(null);
 
   const toggleTab = (index) => {
     setShowPopup(index);
+  };
+  const flyToOptions = {
+    speed: 0.8,
+    zoom: 14,
+    center: [-3.6951906, 40.4011045],
   };
 
   return (
     <section>
       <h2 className="titulo_mapa">
-        <span>Solo en</span> Madrid
+        <span>¿Dónde cambiar euros a dólares?</span> Casas de Cambio en Madrid
       </h2>
-      <div className="contenedor_mapa">
+      <div id="contendor_mapa" className="contenedor_mapa">
         <Map
           initialViewState={{
             longitude: -3.6883264,
-            latitude: 40.4495878,
+            latitude: 40.4535878,
             zoom: 11,
             cooperativeGestures: true,
           }}
+          flyToOptions={flyToOptions}
           className="mapa"
           mapStyle="mapbox://styles/mapbox/streets-v9"
           mapboxAccessToken="pk.eyJ1IjoicXVpY2tnb2wiLCJhIjoiY2xhbGNvcHAyMDRyNjNwbWthcm1zMm9nbyJ9.tmZYhqn4Z6U3fcCZH647Zw"
@@ -55,6 +61,7 @@ const Mapa = () => {
             latitude={40.4011045}
             onClick={() => {
               toggleTab(1);
+              flyToOptions();
             }}
           ></Marker>
           {showPopup === 1 && (
@@ -78,13 +85,34 @@ const Mapa = () => {
                 >
                   {delicias.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3X3XYRj"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${delicias.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {delicias.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="delicias"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}
@@ -115,13 +143,34 @@ const Mapa = () => {
                 >
                   {bernardo.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3V13uCi"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${bernardo.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {bernardo.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="bernardo"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}
@@ -152,13 +201,34 @@ const Mapa = () => {
                 >
                   {caminos.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3EFq1iI"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${caminos.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {caminos.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="caminos"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}
@@ -189,13 +259,34 @@ const Mapa = () => {
                 >
                   {tirso.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3tFiXwm"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${tirso.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {tirso.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="tirso"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}
@@ -219,20 +310,41 @@ const Mapa = () => {
                 <p className="nombre_ciudad_popup">Tetuán</p>
                 <p className="nombre_ciudad_popup">Contacto:</p>
                 <a
-                  href="http://bit.ly/3EgcXPx"
+                  href="http://bit.ly/3tFiXwm"
                   rel="noreferrer"
                   target="_blank"
                   className="direccion_popup"
                 >
                   {tetuan.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3tFiXwm"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${tetuan.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {tetuan.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="tetuan"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}
@@ -263,13 +375,34 @@ const Mapa = () => {
                 >
                   {alcala.result?.formatted_address}
                 </a>
+                <br />
+                <a
+                  href="http://bit.ly/3THXcpZ"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="boton_como_llegar"
+                >
+                  Como llegar
+                </a>
                 <br></br>
                 <a
                   href={`tel:${alcala.result?.international_phone_number}`}
                   className="telefono_popup"
                 >
+                  <span>Llamar: </span>
                   {alcala.result?.international_phone_number}
                 </a>
+                <span className="boton_ver_mas">
+                  <Link
+                    to="alcala"
+                    smooth={true}
+                    offset={-110}
+                    spy={true}
+                    duration={500}
+                  >
+                    Ver Más
+                  </Link>
+                </span>
               </div>
             </Popup>
           )}

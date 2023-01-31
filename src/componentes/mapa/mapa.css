@@ -78,7 +78,7 @@
 }
 .direccion_popup{
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     color: #003071;
     outline: none;
@@ -91,7 +91,28 @@
     color: #B32234;
     text-decoration: none;
 }
-
+.telefono_popup span {
+    color: #003071;
+    font-weight: 600;
+}
+.boton_como_llegar{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10px;
+    padding: 2px 8px;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #B32234;
+    border: 2px solid #003071;
+    border-radius: 8px;
+}
+.boton_ver_mas {
+    color: #003071;
+    font-weight: 900;
+    margin-left: 20px;
+    cursor: pointer;
+}
 @media (min-width: 1191px) {
     .contenedor_mapa {
             width: 100%;

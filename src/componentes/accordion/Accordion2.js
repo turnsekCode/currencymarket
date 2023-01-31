@@ -10,6 +10,9 @@ import {
 import GoogleLogo from "../../assets/logo-Google 1.png";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./accordion.css";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import { Link, animateScroll as scroll } from "react-scroll";
+import Rating from "@mui/material/Rating";
 
 const Accordion2 = ({ showPopup, setShowPopup }) => {
   const { delicias } = useFetchDelicias();
@@ -18,7 +21,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
   const { bernardo } = useFetchBernardo();
   const { caminos } = useFetchCaminos();
   const { alcala } = useFetchAlcala();
-  const [expanded, setExpanded] = useState("");
+  //const [expanded, setExpanded] = useState("");
   const horarios = delicias?.result?.opening_hours?.weekday_text;
   const listaHorarios = horarios?.map((number, i) => (
     <li key={i} className={`dia_${i++}`}>
@@ -46,19 +49,18 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
   } else if (resenas < 1.4 && resenas < 0.7) {
     var img_valoracion = 13;
   }
-  const handleChange = (index) => {
-    setExpanded(index);
+  /*const handleChange = (index) => (event, expanded) => {
+    setExpanded(expanded ? index : true);
+  };*/
+  const toggleTab = (index) => {
+    setShowPopup(index);
   };
-  console.log(expanded);
   return (
     <>
       <div
-        onClick={() => {
-          handleChange(1);
-          setShowPopup(false);
-        }}
+        id="delicias"
         className={
-          showPopup || expanded === 1
+          showPopup === 1
             ? "contenedor_titulo_accordion active"
             : "contenedor_titulo_accordion"
         }
@@ -66,29 +68,44 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
         <span>
           <ArrowForwardIosIcon />
         </span>
-        <h2 className="nombre_tienda">{delicias?.result?.name}</h2>
-        <span
-          onClick={() => {
-            setShowPopup(false);
-          }}
+        <Link
+          to="contendor_mapa"
+          smooth={true}
+          offset={-110}
+          spy={true}
+          duration={500}
         >
-          X
-        </span>
+          <h2
+            onClick={() => {
+              toggleTab(1);
+            }}
+            className="nombre_tienda"
+          >
+            {delicias?.result?.name}
+          </h2>
+        </Link>
       </div>
+
       <div
         className={
-          showPopup || expanded === 1
+          showPopup === 1
             ? "contenedor_accordion2_active"
             : "contenedor_accordion2"
         }
       >
         <div
           className={
-            showPopup || expanded === 1
-              ? "cabecera_estrellas_active"
-              : "cabecera_estrellas"
+            showPopup === 1 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />
@@ -130,19 +147,24 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className={
-          showPopup === 4
-            ? "contenedor_titulo_accordion active"
-            : "contenedor_titulo_accordion"
-        }
-      >
-        <span>
-          <ArrowForwardIosIcon />
-        </span>
-        <h2 className="nombre_tienda">{tirso?.result?.name}</h2>
-      </div>
-
+      <Link to="contendor_mapa" smooth={true} offset={-110} duration={500}>
+        <div
+          onClick={() => {
+            toggleTab(4);
+          }}
+          id="tirso"
+          className={
+            showPopup === 4
+              ? "contenedor_titulo_accordion active"
+              : "contenedor_titulo_accordion"
+          }
+        >
+          <span>
+            <ArrowForwardIosIcon />
+          </span>
+          <h2 className="nombre_tienda">{tirso?.result?.name}</h2>
+        </div>
+      </Link>
       <div
         className={
           showPopup === 4
@@ -155,6 +177,14 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             showPopup === 4 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />
@@ -196,19 +226,25 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className={
-          showPopup === 3
-            ? "contenedor_titulo_accordion active"
-            : "contenedor_titulo_accordion"
-        }
-      >
-        <span>
-          <ArrowForwardIosIcon />
-        </span>
-        <h2 className="nombre_tienda">{caminos?.result?.name}</h2>
-      </div>
+      <Link to="contendor_mapa" smooth={true} offset={-110} duration={500}>
+        <div
+          onClick={() => {
+            toggleTab(3);
+          }}
+          id="caminos"
+          className={
+            showPopup === 3
+              ? "contenedor_titulo_accordion active"
+              : "contenedor_titulo_accordion"
+          }
+        >
+          <span>
+            <ArrowForwardIosIcon />
+          </span>
 
+          <h2 className="nombre_tienda">{caminos?.result?.name}</h2>
+        </div>
+      </Link>
       <div
         className={
           showPopup === 3
@@ -221,6 +257,14 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             showPopup === 3 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />
@@ -262,19 +306,25 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className={
-          showPopup === 2
-            ? "contenedor_titulo_accordion active"
-            : "contenedor_titulo_accordion"
-        }
-      >
-        <span>
-          <ArrowForwardIosIcon />
-        </span>
-        <h2 className="nombre_tienda">{bernardo?.result?.name}</h2>
-      </div>
+      <Link to="contendor_mapa" smooth={true} offset={-110} duration={500}>
+        <div
+          onClick={() => {
+            toggleTab(2);
+          }}
+          id="bernardo"
+          className={
+            showPopup === 2
+              ? "contenedor_titulo_accordion active"
+              : "contenedor_titulo_accordion"
+          }
+        >
+          <span>
+            <ArrowForwardIosIcon />
+          </span>
 
+          <h2 className="nombre_tienda">{bernardo?.result?.name}</h2>
+        </div>
+      </Link>
       <div
         className={
           showPopup === 2
@@ -287,6 +337,14 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             showPopup === 2 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />
@@ -328,19 +386,24 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className={
-          showPopup === 6
-            ? "contenedor_titulo_accordion active"
-            : "contenedor_titulo_accordion"
-        }
-      >
-        <span>
-          <ArrowForwardIosIcon />
-        </span>
-        <h2 className="nombre_tienda">{alcala?.result?.name}</h2>
-      </div>
-
+      <Link to="contendor_mapa" smooth={true} offset={-110} duration={500}>
+        <div
+          onClick={() => {
+            toggleTab(6);
+          }}
+          id="alcala"
+          className={
+            showPopup === 6
+              ? "contenedor_titulo_accordion active"
+              : "contenedor_titulo_accordion"
+          }
+        >
+          <span>
+            <ArrowForwardIosIcon />
+          </span>{" "}
+          <h2 className="nombre_tienda">{alcala?.result?.name}</h2>
+        </div>
+      </Link>
       <div
         className={
           showPopup === 6
@@ -353,6 +416,14 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             showPopup === 6 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />
@@ -394,19 +465,26 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className={
-          showPopup === 5
-            ? "contenedor_titulo_accordion active"
-            : "contenedor_titulo_accordion"
-        }
-      >
-        <span>
-          <ArrowForwardIosIcon />
-        </span>
-        <h2 className="nombre_tienda">{tetuan?.result?.name}</h2>
-      </div>
-
+      <Link to="contendor_mapa" smooth={true} offset={-110} duration={500}>
+        <div
+          onClick={() => {
+            //handleChange(5);
+            //setShowPopup(null);
+            toggleTab(5);
+          }}
+          id="tetuan"
+          className={
+            showPopup === 5
+              ? "contenedor_titulo_accordion active"
+              : "contenedor_titulo_accordion"
+          }
+        >
+          <span>
+            <ArrowForwardIosIcon />
+          </span>{" "}
+          <h2 className="nombre_tienda">{tetuan?.result?.name}</h2>
+        </div>
+      </Link>
       <div
         className={
           showPopup === 5
@@ -419,6 +497,14 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             showPopup === 5 ? "cabecera_estrellas_active" : "cabecera_estrellas"
           }
         >
+          <span
+            className="boton_cierre"
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
+            <HighlightOffIcon />
+          </span>
           <div className="contenedor_google_accordion">
             <div className="logo_google">
               <img src={GoogleLogo} alt="" />

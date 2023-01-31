@@ -101,22 +101,26 @@
     height: 350px;
     visibility: visible;
     transition: 0.3s ;
+    margin-bottom: 15px;
 }
 .cabecera_estrellas{
     visibility: hidden;
     transition: 0.1s ;
     padding: 0 35px;
+    position: relative;
 }
 .cabecera_estrellas_active {
     visibility: visible;
     transition: 0.9s;
     padding: 0 35px;
+    position: relative;
 }
 .contenedor_titulo_accordion span svg {
     color: #FBCF00;
     margin-right: 8px;
     margin-bottom: 7px;
     transition: 0.2s ;
+    cursor: pointer;
 }
 .active span svg {
     transform: rotate(90deg);
@@ -125,6 +129,14 @@
 .contenedor_titulo_accordion {
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+.boton_cierre{
+    position: absolute;
+    right: 37px;
+    top: 4px;
+    color: #003071;
+    cursor: pointer;
 }
 
 @media (min-width: 1191px) {
@@ -213,5 +225,12 @@
         }
         .contenedor_accordion {
             margin-top: 30px;
+        }
+        .boton_cierre {
+            position: absolute;
+            right: 300px;
+            top: 19px;
+            color: #003071;
+            cursor: pointer;
         }
 }

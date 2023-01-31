@@ -29,7 +29,24 @@
   margin: 0;
   text-align: justify;
 }
-
+.scroll-to-top{
+  bottom: 80px!important;
+  right: 10px!important;
+  color: #003071;
+}
+.mapboxgl-ctrl-group button{
+  width: 29px;
+  height: 29px;
+}
+@media (min-width: 375px) {
+  .scroll-to-top {
+      bottom: 80px!important;
+      right: 10px!important;
+    }
+  .bloque_der {
+    width: 334px;
+  }
+}
 @media (min-width: 1191px) {
 .contenedor_conversor {
     margin-top: 25px;
@@ -57,8 +74,12 @@
     justify-content: center;
      margin-top: 27px;
   } 
-    .layout {
-      max-width: 1060px;
-      margin: 0 auto;
-    }
+  .layout {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .scroll-to-top {
+    bottom: 40px !important;
+    right: 40px !important;
+  }
 }

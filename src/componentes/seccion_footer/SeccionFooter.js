@@ -10,7 +10,7 @@ const SeccionFooter = () => {
         <span>CURRENCY</span>MARKET®
       </h1>
       <div className="contenedor_links_footer">
-        <Link to={`privacidad`} target="_blank" className="links_footer">
+        <Link to={"/dolares-cotizacion/privacidad"} className="links_footer">
           POLÍTICA DE PRIVACIDAD
         </Link>
         <a

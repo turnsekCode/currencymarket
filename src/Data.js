@@ -1,21 +1,5 @@
 import { useState, useEffect } from "react";
 
-/*export const useFetch = () => {
-  const [delicias, setDelicias] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://maps.googleapis.com/maps/api/place/details/json?language=es&placeid=ChIJ8zOztFsnQg0Rw7BEDPTZQQI&key=AIzaSyBfjtp2uF9HUlxszuopGxGFG2unuDWj7Lw"
-    )
-      .then((response) => response.json())
-      .then((delicias) => {
-        setDelicias(delicias);
-      });
-  }, []);
-  return {
-    delicias,
-  };
-};*/
-
 export const useFetchDelicias = () => {
   const [delicias, setDelicias] = useState([]);
   useEffect(() => {

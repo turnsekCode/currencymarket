@@ -6,20 +6,23 @@ const FooterPasos = () => {
   return (
     <section className="contenedor_section_footer">
       <h2 className="titulo_superior_footer">
-        COMPRA DÓLAR <span>EN MENOS DE</span> 10 MINUTOS
+        Cambia Euros a Dólares en <span>3 pasos:</span>
       </h2>
       <div className="contenedor_cajas_pasos">
         <div className="caja_pasos">
           <h3>1</h3>
           <h4>LLAMA</h4>
+          <p>a tu tienda más cercana</p>
         </div>
         <div className="caja_pasos">
           <h3>2</h3>
           <h4>RESERVA</h4>
+          <p>la cantidad de dólares que necesitas</p>
         </div>
         <div className="caja_pasos">
           <h3>3</h3>
           <h4>RECOGE</h4>
+          <p>tus dólares</p>
         </div>
       </div>
       <h2 className="titulo_inferior_footer">
