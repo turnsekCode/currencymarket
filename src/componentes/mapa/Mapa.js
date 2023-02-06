@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./mapa.css";
 import {
   useFetchDelicias,
@@ -16,7 +16,7 @@ import Map, {
   Popup,
 } from "react-map-gl";
 import Accordion2 from "../accordion/Accordion2";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 const Mapa = () => {
   const { delicias } = useFetchDelicias();
@@ -28,18 +28,39 @@ const Mapa = () => {
 
   const [showPopup, setShowPopup] = useState(null);
 
-  const [flyto, setFlyto] = useState({
-    long: -3.6883264,
-    lat: 40.4535878,
+  const [viewState, setViewState] = useState({
+    longitude: -3.6883264,
+    latitude: 40.4535878,
+    zoom: 11,
+    cooperativeGestures: true,
   });
-  console.log(flyto);
-  const click = () => {
-    setFlyto({ long: -3.6951906, lat: 40.4011045 });
-  };
+
   const toggleTab = (index) => {
     setShowPopup(index);
   };
+  const mapRef = useRef();
 
+  const onSelectDelicias = ()  => {
+    mapRef.current?.flyTo({center: [-3.6951906, 40.4011045], duration: 2000, zoom: 11});
+  };
+  const onSelectTirso = ()  => {
+    mapRef.current?.flyTo({center: [-3.705431599999997, 40.4121929], duration: 2000, zoom: 11});
+  };
+  const onSelectTetuan = ()  => {
+    mapRef.current?.flyTo({center: [-3.698444600000016, 40.4603827], duration: 2000, zoom: 11});
+  };
+  const onSelectAlcala = ()  => {
+    mapRef.current?.flyTo({center: [-3.665292000000022, 40.429553], duration: 2000, zoom: 11});
+  };
+  const onSelectBernardo = ()  => {
+    mapRef.current?.flyTo({center: [-3.7073656999999685, 40.4232377], duration: 2000, zoom: 11});
+  };
+  const onSelectCaminos = ()  => {
+    mapRef.current?.flyTo({center: [-3.7039902999999867, 40.4488839], duration: 2000, zoom: 11});
+  };
+  const resetMap = ()  => {
+    mapRef.current?.flyTo({center: [-3.6883264, 40.4535878], duration: 2000, zoom: 11});
+  };
   return (
     <section>
       <h2 className="titulo_mapa">
@@ -47,23 +68,23 @@ const Mapa = () => {
       </h2>
       <div id="contendor_mapa" className="contenedor_mapa">
         <Map
-          initialViewState={{
-            longitude: flyto.long,
-            latitude: flyto.lat,
-            zoom: 11,
-            cooperativeGestures: true,
-          }}
+          ref={mapRef}
+          {...viewState}
+          onMove={evt => setViewState(evt.viewState)}
           className="mapa"
           mapStyle="mapbox://styles/mapbox/streets-v9"
           mapboxAccessToken="pk.eyJ1IjoicXVpY2tnb2wiLCJhIjoiY2xhbGNvcHAyMDRyNjNwbWthcm1zMm9nbyJ9.tmZYhqn4Z6U3fcCZH647Zw"
         >
           <FullscreenControl /> <GeolocateControl /> <NavigationControl />
+          <button className="reset_map"  onClick={() => {
+              resetMap();
+            }}>Reset Map</button>
           <Marker
             longitude={-3.6951906}
             latitude={40.4011045}
             onClick={() => {
               toggleTab(1);
-              click();
+              onSelectDelicias();
             }}
           ></Marker>
           {showPopup === 1 && (
@@ -90,8 +111,7 @@ const Mapa = () => {
                 <br />
                 <a
                   href="http://bit.ly/3X3XYRj"
-                  rel="noreferrer"
-                  target="_blank"
+                  rel="noreferrer"ƒ
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -123,6 +143,7 @@ const Mapa = () => {
             latitude={40.4232377}
             onClick={() => {
               toggleTab(2);
+              onSelectBernardo();
             }}
           ></Marker>
           {showPopup === 2 && (
@@ -149,7 +170,6 @@ const Mapa = () => {
                 <a
                   href="http://bit.ly/3V13uCi"
                   rel="noreferrer"
-                  target="_blank"
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -181,6 +201,7 @@ const Mapa = () => {
             latitude={40.4488839}
             onClick={() => {
               toggleTab(3);
+              onSelectCaminos();
             }}
           ></Marker>
           {showPopup === 3 && (
@@ -207,7 +228,6 @@ const Mapa = () => {
                 <a
                   href="http://bit.ly/3EFq1iI"
                   rel="noreferrer"
-                  target="_blank"
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -239,6 +259,7 @@ const Mapa = () => {
             latitude={40.4121929}
             onClick={() => {
               toggleTab(4);
+              onSelectTirso();
             }}
           ></Marker>
           {showPopup === 4 && (
@@ -265,7 +286,6 @@ const Mapa = () => {
                 <a
                   href="http://bit.ly/3tFiXwm"
                   rel="noreferrer"
-                  target="_blank"
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -297,6 +317,7 @@ const Mapa = () => {
             latitude={40.4603827}
             onClick={() => {
               toggleTab(5);
+              onSelectTetuan();
             }}
           ></Marker>
           {showPopup === 5 && (
@@ -323,7 +344,6 @@ const Mapa = () => {
                 <a
                   href="http://bit.ly/3tFiXwm"
                   rel="noreferrer"
-                  target="_blank"
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -355,6 +375,7 @@ const Mapa = () => {
             latitude={40.429553}
             onClick={() => {
               toggleTab(6);
+              onSelectAlcala();
             }}
           ></Marker>
           {showPopup === 6 && (
@@ -381,7 +402,6 @@ const Mapa = () => {
                 <a
                   href="http://bit.ly/3THXcpZ"
                   rel="noreferrer"
-                  target="_blank"
                   className="boton_como_llegar"
                 >
                   Cómo llegar
@@ -416,7 +436,7 @@ const Mapa = () => {
           Encuentra <span>tu tienda más cercana</span>
         </h2>
       </div>
-      <Accordion2 showPopup={showPopup} setShowPopup={setShowPopup} />
+      <Accordion2 onSelectDelicias={onSelectDelicias}onSelectAlcala={onSelectAlcala} onSelectTetuan={onSelectTetuan} onSelectCaminos={onSelectCaminos}onSelectBernardo={onSelectBernardo}onSelectTirso={onSelectTirso} showPopup={showPopup} setShowPopup={setShowPopup} setViewState={setViewState}/>
     </section>
   );
 };

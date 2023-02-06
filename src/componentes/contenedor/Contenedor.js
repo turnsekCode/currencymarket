@@ -5,7 +5,6 @@ import BanderasInferior from "../banderas_inferior/BanderasInferior";
 import BotonLlamarFijo from "../boton_llamar_fijo/BotonLlamarFijo";
 import ScrollToTop from "react-scroll-to-top";
 import { ScrollRestoration } from "react-router-dom";
-import PopupGoogle from "../popup google/PopupGoogle";
 
 export default function Layout({ children }) {
   return (
@@ -15,7 +14,6 @@ export default function Layout({ children }) {
       <main className="layout">{children}</main>
       <ScrollToTop smooth />
       <ScrollRestoration />
-
       <Footer />
       <BanderasInferior />
       <BotonLlamarFijo />

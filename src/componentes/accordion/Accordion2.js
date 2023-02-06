@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   useFetchDelicias,
   useFetchTirso,
@@ -11,17 +11,15 @@ import GoogleLogo from "../../assets/logo-Google 1.png";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./accordion.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { Link, animateScroll as scroll } from "react-scroll";
-import Rating from "@mui/material/Rating";
+import { Link  } from "react-scroll";
 
-const Accordion2 = ({ showPopup, setShowPopup }) => {
+const Accordion2 = ({ showPopup, setShowPopup, onSelectAlcala, onSelectDelicias, onSelectTetuan, onSelectBernardo, onSelectTirso, onSelectCaminos }) => {
   const { delicias } = useFetchDelicias();
   const { tirso } = useFetchTirso();
   const { tetuan } = useFetchTetuan();
   const { bernardo } = useFetchBernardo();
   const { caminos } = useFetchCaminos();
   const { alcala } = useFetchAlcala();
-  //const [expanded, setExpanded] = useState("");
   const horarios = delicias?.result?.opening_hours?.weekday_text;
   const listaHorarios = horarios?.map((number, i) => (
     <li key={i} className={`dia_${i++}`}>
@@ -49,12 +47,10 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
   } else if (resenas < 1.4 && resenas < 0.7) {
     var img_valoracion = 13;
   }
-  /*const handleChange = (index) => (event, expanded) => {
-    setExpanded(expanded ? index : true);
-  };*/
   const toggleTab = (index) => {
     setShowPopup(index);
   };
+ 
   return (
     <>
       <div
@@ -78,6 +74,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
           <h2
             onClick={() => {
               toggleTab(1);
+              onSelectDelicias()
             }}
             className="nombre_tienda"
           >
@@ -151,6 +148,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
         <div
           onClick={() => {
             toggleTab(4);
+            onSelectTirso()
           }}
           id="tirso"
           className={
@@ -230,6 +228,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
         <div
           onClick={() => {
             toggleTab(3);
+            onSelectCaminos()
           }}
           id="caminos"
           className={
@@ -310,6 +309,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
         <div
           onClick={() => {
             toggleTab(2);
+            onSelectBernardo()
           }}
           id="bernardo"
           className={
@@ -390,6 +390,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
         <div
           onClick={() => {
             toggleTab(6);
+            onSelectAlcala()
           }}
           id="alcala"
           className={
@@ -471,6 +472,7 @@ const Accordion2 = ({ showPopup, setShowPopup }) => {
             //handleChange(5);
             //setShowPopup(null);
             toggleTab(5);
+            onSelectTetuan()
           }}
           id="tetuan"
           className={
