@@ -163,9 +163,8 @@
         }
         .logo_google {
             width: 100px;
-            display: block;
-            margin-right: 10px;
-            margin-bottom: -3px;
+            display: inline-block;
+            margin: 0 9px -22px 8px;
         }
         .logo_google img {
             width: 100%;

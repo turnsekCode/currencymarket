@@ -28,13 +28,16 @@ const Mapa = () => {
 
   const [showPopup, setShowPopup] = useState(null);
 
+  const [flyto, setFlyto] = useState({
+    long: -3.6883264,
+    lat: 40.4535878,
+  });
+  console.log(flyto);
+  const click = () => {
+    setFlyto({ long: -3.6951906, lat: 40.4011045 });
+  };
   const toggleTab = (index) => {
     setShowPopup(index);
-  };
-  const flyToOptions = {
-    speed: 0.8,
-    zoom: 14,
-    center: [-3.6951906, 40.4011045],
   };
 
   return (
@@ -45,12 +48,11 @@ const Mapa = () => {
       <div id="contendor_mapa" className="contenedor_mapa">
         <Map
           initialViewState={{
-            longitude: -3.6883264,
-            latitude: 40.4535878,
+            longitude: flyto.long,
+            latitude: flyto.lat,
             zoom: 11,
             cooperativeGestures: true,
           }}
-          flyToOptions={flyToOptions}
           className="mapa"
           mapStyle="mapbox://styles/mapbox/streets-v9"
           mapboxAccessToken="pk.eyJ1IjoicXVpY2tnb2wiLCJhIjoiY2xhbGNvcHAyMDRyNjNwbWthcm1zMm9nbyJ9.tmZYhqn4Z6U3fcCZH647Zw"
@@ -61,7 +63,7 @@ const Mapa = () => {
             latitude={40.4011045}
             onClick={() => {
               toggleTab(1);
-              flyToOptions();
+              click();
             }}
           ></Marker>
           {showPopup === 1 && (

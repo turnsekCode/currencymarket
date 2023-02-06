@@ -55,7 +55,7 @@
     text-align: end;
 }
 .bloque_izq_moneda {
-    width: 130px;
+    width: 134px;
     outline: none;
     font-weight: 700;
     font-size: 14px;
@@ -105,7 +105,7 @@
         }
     
         .contenedor_conversor_divisa {
-            margin-top: 80px;
+            margin-top: 40px;
         }
     
         .contenedor_input {
@@ -148,7 +148,7 @@
         }
     
         .bloque_izq_moneda {
-            width: 120px;
+            width: 125px;
             outline: none;
             font-weight: 700;
             font-size: 14px;
